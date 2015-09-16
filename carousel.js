@@ -32,15 +32,15 @@ window.carousel = {
 		var x=image.x+(param.maxwidth-image.minW*image.prop)/2;
 
 		if (image.over) {
-			param.context.fillStyle = carousel.bg;
-			param.context.fillRect(x,image.y,image.minW*image.prop,image.minH*image.prop);
+			//param.context.fillStyle = carousel.bg;
+			//param.context.fillRect(x,image.y,image.minW*image.prop,image.minH*image.prop);
 		}
 		param.context.drawImage(image.img, x, image.y, image.minW*image.prop, image.minH*image.prop);
 		if (image.over) {
-			param.context.strokeRect(x,image.y,image.minW*image.prop,image.minH*image.prop);
+			//param.context.strokeRect(x,image.y,image.minW*image.prop,image.minH*image.prop);
 			if (image.title) {
 				param.context.fillStyle = "rgba(255,255,255,0.5)";
-				param.context.fillRect(x,image.y+image.minH*image.prop-40,image.minW*image.prop,image.minH*image.prop);
+				param.context.fillRect(x,image.y+image.minH*image.prop-40,image.minW*image.prop,40);
 				param.context.fillStyle = carousel.bgfont;
 				param.context.fillText(image.title, x+5, image.y+image.minH*image.prop-10);
 			}
@@ -193,13 +193,13 @@ window.carousel = {
 			var faster=(param.speed<=0);
 
 			if(faster){
-				if(speed>=80){
-					speed=320;
+				if(speed>=100){
+					speed=400;
 				}else{
-					speed=80;
+					speed=100;
 				}
 			}else{
-				speed=80;
+				speed=100;
 			}
 			param.speed=-speed;
 			//console.log('right '+param.speed,faster);
@@ -209,13 +209,13 @@ window.carousel = {
 			var faster=(param.speed>=0);
 
 			if(faster){
-				if(speed>=80){
-					speed=320;
+				if(speed>=100){
+					speed=400;
 				}else{
-					speed=80;
+					speed=100;
 				}
 			}else{
-				speed=80;
+				speed=100;
 			}
 			param.speed=speed;
 			//console.log('left '+param.speed,faster);
