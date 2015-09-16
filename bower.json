@@ -1,0 +1,6 @@
+{
+  "name": "itlife-carousel",
+  "dependencies": {
+    "jquery-touch-events": "~1.0.1"
+  }
+}
