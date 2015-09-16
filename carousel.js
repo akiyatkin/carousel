@@ -87,10 +87,18 @@ window.carousel = {
         } else if(!over && param.over) {
             param.canvas.style.cursor = "pointer";
         }
-        param.images.sort(function(im1, im2){
+
+        param.images.sort(function(im1, im2){ ///Сортировка картинок
             if (im2.order < im1.order) return 1;
             if (im2.order > im1.order) return -1;
         });
+
+
+        if (!param.over&&!param.mouse) { //Нужно ближайшую картинку подсветить
+            param.over=param.images[param.images.length-1];
+            param.over.over = true;
+        }
+        
         param.context.clearRect(0, 0, param.canvas.width, param.canvas.height);
         carousel.each(param, function (image) {
             carousel.print(param, image);
